@@ -8,7 +8,7 @@ dao层操作数据库可以对应为第三方依赖库，因此这个错误可�
 
 
 伪代码实现：
-'''
+```
 //dao层
 
 var ErrNotFound = errors.New(" Not found")
@@ -25,12 +25,12 @@ func FindArticleByID(ID int) (article *model.Article, err error) {
 	}
 	return article, nil
 }
-'''
+```
 
 
-'''
+```
 //service层
-articleID := 30
+    articleID := 30
 	article, err := dao.FindArticleByID(articleID)
 	if errors.Is(err, dao.ErrNotFound) {
 		// 返回 404 并打印日志
@@ -43,4 +43,4 @@ articleID := 30
 		return
 	}
 	
-'''
+```
